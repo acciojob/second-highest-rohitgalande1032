@@ -8,10 +8,24 @@
 
 <body>	
 	<script>
-		function secondHighest(arr) {
-			//Write your code here
-			
-		}
+		function secondHighestNum(arr){
+		  //Write your code here
+		  if (arr.length <= 1){
+		    return "-Infinity";
+		  }
+		  let secondHighestEle = arr[0];
+		  let highest = arr[0];
+		  for(let i=1; i<arr.length; i++) {
+		    if(arr[i] > highest) {
+		      secondHighestEle = highest;
+		      highest = arr[i];
+		    } 
+		    else if(arr[i]>secondHighestEle && arr[i] !== highest){
+		        secondHighestEle=arr[i];
+		    }
+		  }
+		  return secondHighestEle;
+		} 
 
 		function Main() {
 			var n = prompt("Enter the number of elements");
